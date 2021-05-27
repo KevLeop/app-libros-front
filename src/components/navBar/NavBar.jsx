@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Box, ThemeProvider } from "@material-ui/core";
+import { Link, NavLink } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import {
   AppBar,
@@ -55,25 +56,31 @@ const NavBar = () => {
           <AppBar position="fixed" color="primary">
             <Toolbar display="flex" alignItems="center">
               <Box display="flex">
-                <Typography variant="h6" display="flex" alignItems="center">
-                  AppLibros
-                </Typography>
-                <Button
-                  className={classes.button}
-                  variant="text"
-                  color="inherit"
-                  disableRipple
-                >
-                  Inicio
-                </Button>
-                <Button
-                  className={classes.button}
-                  variant="text"
-                  color="inherit"
-                  disableRipple
-                >
-                  Nosotros
-                </Button>
+                <NavLink to="/" style={{ textDecoration: "none" }}>
+                  <Typography variant="h6" display="flex" alignItems="center">
+                    AppLibros
+                  </Typography>
+                </NavLink>
+                <NavLink to="/" style={{ textDecoration: "none" }}>
+                  <Button
+                    className={classes.button}
+                    variant="text"
+                    color="inherit"
+                    disableRipple
+                  >
+                    Inicio
+                  </Button>
+                </NavLink>
+                <NavLink to="/" style={{ textDecoration: "none" }}>
+                  <Button
+                    className={classes.button}
+                    variant="text"
+                    color="inherit"
+                    disableRipple
+                  >
+                    Nosotros
+                  </Button>
+                </NavLink>
               </Box>
               <Box display="flex" flexGrow={1} justifyContent="flex-end">
                 <Button
@@ -81,7 +88,9 @@ const NavBar = () => {
                   variant="outlined"
                   color="inherit"
                 >
-                  Login
+                  <Link to="/login" style={{ textDecoration: "none" }}>
+                    Login
+                  </Link>
                 </Button>
                 <IconButton aria-label="" color="inherit">
                   <MenuIcon />
