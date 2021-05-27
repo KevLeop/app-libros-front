@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Box, ThemeProvider } from "@material-ui/core";
 import { Link, NavLink } from "react-router-dom";
+import BookIcon from "@material-ui/icons/Book";
 // import { Link } from "react-router-dom";
 import {
   AppBar,
@@ -21,7 +22,15 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     "&:hover": {
       backgroundColor: "transparent",
-      color: "white",
+      color: "#439999",
+    },
+  },
+  buttonLogo: {
+    backgroundColor: "transparent",
+    color: "#000",
+    "&:hover": {
+      backgroundColor: "transparent",
+      color: "#fff",
     },
   },
   buttonLogin: {
@@ -33,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
       fontWeight: "bolder",
     },
-    borderWidth: "2px",
+    borderWidth: "2.5px",
     borderRadius: 25,
     borderColor: "#fff",
   },
@@ -58,7 +67,15 @@ const NavBar = () => {
               <Box display="flex">
                 <NavLink to="/" style={{ textDecoration: "none" }}>
                   <Typography variant="h6" display="flex" alignItems="center">
-                    AppLibros
+                    <Button
+                      startIcon={<BookIcon />}
+                      className={classes.buttonLogo}
+                      variant="text"
+                      color="inherit"
+                      disableRipple
+                    >
+                      AppLibros
+                    </Button>
                   </Typography>
                 </NavLink>
                 <NavLink to="/" style={{ textDecoration: "none" }}>
